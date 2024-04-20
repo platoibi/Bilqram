@@ -11,5 +11,8 @@ urlpatterns = [
     path('newBlog', views.createBlogPage, name='newBlog'),
     path('newBlogAction', views.createBlogAction, name='newBlogAction'),
     path('blog/<int:blog_id>', views.blog, name='blog'),
-    path('blogs', views.blogs, name='blogs')
+    path('blogs', views.blogs, name='blogs'),
+    path('register', views.register, name='register'),
+    path('user_created', views.user_created, name='user_created'),
+    path('login/', views.user_login, name='login')
 ]
