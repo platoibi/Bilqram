@@ -1,15 +1,10 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>User Registration</title>
-</head>
-<body>
+{% extends 'Bilqram/base.html' %}
+{% block title %}    <title>User Registration</title> {% endblock %}
+{% block content %}
     <h2>User Registration</h2>
     <form method="post">
         {% csrf_token %}
         {{ form.as_p }}
         <button type="submit">Register</button>
     </form>
-</body>
-</html>
+{% endblock %}

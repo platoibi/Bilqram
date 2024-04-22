@@ -1,23 +1,15 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
+{% extends 'Bilqram/base.html' %}
+{% block title %}
     <title>New blog</title>
-</head>
-<body>
+{% endblock %}
+{% block content %}
 <form action="{% url 'Bilqram:newBlogAction' %}" method="post">
     {% csrf_token %}
     <fieldset>
         <legend>Blog</legend>
         <label for="title">Title</label><input type="text" name="title" id="title"><br><br>
         <label for="content">Text</label><textarea name="content" id="content"></textarea><br><br>
-        <label for="author">Author</label><select name="author" id = "author">
-            {% for user in users %}
-                <option value="{{ user.id }}">{{ user.username }}</option>
-            {% endfor %}
-        </select>
     </fieldset>
     <input type="submit" value="Publish Blog">
 </form>
-</body>
-</html>
+{% endblock content %}

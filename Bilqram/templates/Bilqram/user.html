@@ -1,11 +1,10 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
+{% extends 'Bilqram/base.html' %}
+
+{% block title %}
     <title>{{ user.username }}</title>
-</head>
-<body>
+{% endblock %}
+
+{% block content %}
     <p>Name: {{ user.name }}</p>
     <p>Surname: {{ user.surname }}</p>
-</body>
-</html>
+{% endblock content %}

@@ -1,15 +1,16 @@
 from django.shortcuts import get_object_or_404, render, redirect
 from django.http import HttpResponse, Http404
 from django.utils import timezone
-from django.contrib.auth import authenticate, login
+from django.contrib.auth import authenticate, login, logout
 from django.contrib import messages
 from .forms import UserRegistrationForm
 from Bilqram.models import User, Blog
 from .forms import LoginForm
 
+
 # Create your views here.
 def index(request):
-    return HttpResponse("Hello, world. You're at the bilqram index.")
+    return render(request, 'Bilqram/home.html')
 
 
 def users(request):
@@ -20,8 +21,8 @@ def users(request):
     return render(request, 'Bilqram/users.html', context)
 
 
-def user(request, username):
-    u = get_object_or_404(User, username=username)
+def user(request, username:str):
+    u = get_object_or_404(User, username=username.lower())
     context = {
         'user': u
     }
@@ -29,17 +30,17 @@ def user(request, username):
 
 
 def createBlogPage(request):
-    context = {
-        'users': User.objects.all()
-    }
-    return render(request, 'Bilqram/createBlog.html', context)
+    if request.user.is_authenticated:
+        return render(request, 'Bilqram/createBlog.html')
+    else:
+        return redirect('Bilqram:login')
 
 
 def createBlogAction(request):
     d = request.POST
     print(d)
     b = Blog(title=d['title'], content=d['content'],
-             author=get_object_or_404(User, id=int(d['author'])), pub_date=timezone.now(), editable=True)
+             author=request.user, pub_date=timezone.now(), editable=True)
     b.save()
     return redirect('Bilqram:blogs')
 
@@ -59,6 +60,7 @@ def blog(request, blog_id):
     }
     return render(request, 'Bilqram/blog.html', context)
 
+
 def register(request):
     if request.method == 'POST':
         form = UserRegistrationForm(request.POST)
@@ -71,6 +73,7 @@ def register(request):
     else:
         form = UserRegistrationForm()
     return render(request, 'Bilqram/register.html', {'form': form})
+
 
 def user_login(request):
     if request.method == 'POST':
@@ -91,5 +94,11 @@ def user_login(request):
         form = LoginForm()
     return render(request, 'Bilqram/login.html', {'form': form})
 
+
 def user_created(request):
     return render(request, 'Bilqram/user_created.html')
+
+
+def user_logout(request):
+    logout(request)
+    return redirect('Bilqram:blogs')

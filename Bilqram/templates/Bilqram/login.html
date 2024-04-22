@@ -1,9 +1,9 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
+{% extends 'Bilqram/base.html' %}
+{% block title %}
     <title>Login</title>
-</head>
+{% endblock title %}
+
+{% block content %}
 <body>
     <h2>Login</h2>
     {% if messages %}
@@ -16,5 +16,6 @@
         {{ form.as_p }}
         <button type="submit">Login</button>
     </form>
-</body>
-</html>
+<br><br>
+<a href="{% url 'Bilqram:register' %}">Register</a>
+{% endblock content %}

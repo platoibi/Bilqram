@@ -5,16 +5,21 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="23761e23-0ab5-4e7a-b1c0-d2b75d64ccc4" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Bilqram/forms.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Bilqram/templates/Bilqram/login.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Bilqram/templates/Bilqram/register.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Bilqram/templates/Bilqram/user_created.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Bilqram/templates/Bilqram/base.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Bilqram/templates/Bilqram/home.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/Project.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/Project.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Bilqram/templates/Bilqram/blog.html" beforeDir="false" afterPath="$PROJECT_DIR$/Bilqram/templates/Bilqram/blog.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Bilqram/templates/Bilqram/blogs.html" beforeDir="false" afterPath="$PROJECT_DIR$/Bilqram/templates/Bilqram/blogs.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Bilqram/templates/Bilqram/createBlog.html" beforeDir="false" afterPath="$PROJECT_DIR$/Bilqram/templates/Bilqram/createBlog.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Bilqram/templates/Bilqram/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/Bilqram/templates/Bilqram/login.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Bilqram/templates/Bilqram/register.html" beforeDir="false" afterPath="$PROJECT_DIR$/Bilqram/templates/Bilqram/register.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Bilqram/templates/Bilqram/user.html" beforeDir="false" afterPath="$PROJECT_DIR$/Bilqram/templates/Bilqram/user.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Bilqram/templates/Bilqram/user_created.html" beforeDir="false" afterPath="$PROJECT_DIR$/Bilqram/templates/Bilqram/user_created.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Bilqram/templates/Bilqram/users.html" beforeDir="false" afterPath="$PROJECT_DIR$/Bilqram/templates/Bilqram/users.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Bilqram/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/Bilqram/urls.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Bilqram/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/Bilqram/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Project/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/Project/settings.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -28,45 +33,56 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="HTML File" />
         <option value="Python Script" />
+        <option value="HTML File" />
       </list>
     </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
+  "lastFilter": {
+    "state": "OPEN",
+    "assignee": "platoibi"
+  }
+}]]></component>
+  <component name="GithubPullRequestsUISettings">
+    <option name="selectedUrlAndAccountId">
+      <UrlAndAccount>
+        <option name="accountId" value="8075fb6f-b64a-4390-a4fc-e49226455944" />
+        <option name="url" value="https://github.com/platoibi/Bilqram.git" />
+      </UrlAndAccount>
+    </option>
+  </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 7
 }</component>
   <component name="ProjectId" id="2fJwVO7Gydr1svEsKE1GxVXBEnF" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
-    <ConfirmationsSetting value="2" id="Add" />
-  </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "DefaultHtmlFileTemplate": "HTML File",
-    "Django Server.Project.executor": "Run",
-    "RunOnceActivity.OpenDjangoStructureViewOnStart": "true",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.pycharm.django.structure.promotion.once.per.project": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "django.template.preview.state": "SHOW_EDITOR",
-    "git-widget-placeholder": "main",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;DefaultHtmlFileTemplate&quot;: &quot;HTML File&quot;,
+    &quot;Django Server.Project.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.OpenDjangoStructureViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.pycharm.django.structure.promotion.once.per.project&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;django.template.preview.state&quot;: &quot;SHOW_EDITOR&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/Bilqram/templates" />

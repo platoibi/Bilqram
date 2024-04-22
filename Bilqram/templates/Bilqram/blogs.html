@@ -1,10 +1,6 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Blogs</title>
-</head>
-<body>
+{% extends 'Bilqram/base.html' %}
+{% block title %} <title>Blogs</title> {% endblock title %}
+{% block content %}
 {% if blogs  %}
     {% for blog in blogs %}
         <li><a href="{% url 'Bilqram:blog' blog.id %}">{{ blog.title }}</a></li>
@@ -12,5 +8,4 @@
 {% endif %}
 <br><br>
 <a href="{% url 'Bilqram:newBlog' %}"><button>New Blog</button></a>
-</body>
-</html>
+{% endblock %}

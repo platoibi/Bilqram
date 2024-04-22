@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    {% block title %} <title>Base Page</title> {% endblock title %}
+    <style>
+        div.topnav ul {
+          list-style-type: none;
+          margin: 0;
+          padding: 0;
+          overflow: hidden;
+          background-color: #333;
+        }
+
+        div.topnav li {
+          float: left;
+        }
+
+        div.topnav li.login{
+            float: right;
+        }
+        div.topnav li.register{
+            float:right;
+        }
+
+        div.topnav li a {
+          display: block;
+          color: white;
+          text-align: center;
+          padding: 14px 16px;
+          text-decoration: none;
+        }
+
+        div.topnav li a:hover {
+          background-color: #111;
+        }
+    </style>
+
+</head>
+<body>
+<div class="topnav">
+    <ul>
+        <li><a href="{% url 'Bilqram:home' %}">Home</a></li>
+        <li><a href="{% url 'Bilqram:blogs' %}">Blogs</a></li>
+        <li><a href="{% url 'Bilqram:users' %}">Users</a></li>
+        <li class="login"><a href="{% url 'Bilqram:login' %}">Login</a></li>
+        <li class="register"><a href="{% url 'Bilqram:register' %}">Register</a></li>
+    </ul>
+</div>
+
+<div id="content">
+{% block content %}
+{% endblock %}
+</div>
+</body>
+</html>

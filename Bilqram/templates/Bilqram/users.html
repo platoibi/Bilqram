@@ -1,16 +1,15 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Users</title>
-</head>
-<body>
-{% if user_list  %}
-    {% for user in user_list %}
-        <li><a href="{% url 'Bilqram:user' user.username %}">{{ user }}</a></li>
-    {% endfor %}
-{% else %}
+{% extends 'Bilqram/base.html' %}
 
-{% endif %}
-</body>
-</html>
+{% block title %}
+<title>Users</title>
+{% endblock title %}
+
+{% block content %}
+
+    {% if user_list  %}
+        {% for user in user_list %}
+            <li><a href="{% url 'Bilqram:user' user.username %}">{{ user }}</a></li>
+        {% endfor %}
+    {% endif %}
+    
+{% endblock %}
