@@ -21,7 +21,7 @@ def users(request):
     return render(request, 'Bilqram/users.html', context)
 
 
-def user(request, username:str):
+def user(request, username: str):
     u = get_object_or_404(User, username=username.lower())
     context = {
         'user': u
@@ -40,7 +40,7 @@ def createBlogAction(request):
     d = request.POST
     print(d)
     b = Blog(title=d['title'], content=d['content'],
-             author=request.user, pub_date=timezone.now(), editable=True)
+             author=get_object_or_404(User, id=request.user.id), pub_date=timezone.now(), editable=True)
     b.save()
     return redirect('Bilqram:blogs')
 
@@ -101,4 +101,4 @@ def user_created(request):
 
 def user_logout(request):
     logout(request)
-    return redirect('Bilqram:blogs')
+    return redirect('Bilqram:home')

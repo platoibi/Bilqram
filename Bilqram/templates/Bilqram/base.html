@@ -16,11 +16,8 @@
           float: left;
         }
 
-        div.topnav li.login{
+        div.topnav li.login, div.topnav li.register, div.topnav li.user{
             float: right;
-        }
-        div.topnav li.register{
-            float:right;
         }
 
         div.topnav li a {
@@ -43,8 +40,12 @@
         <li><a href="{% url 'Bilqram:home' %}">Home</a></li>
         <li><a href="{% url 'Bilqram:blogs' %}">Blogs</a></li>
         <li><a href="{% url 'Bilqram:users' %}">Users</a></li>
-        <li class="login"><a href="{% url 'Bilqram:login' %}">Login</a></li>
-        <li class="register"><a href="{% url 'Bilqram:register' %}">Register</a></li>
+        {% if not user.is_authenticated %}
+            <li class="login"><a href="{% url 'Bilqram:login' %}">Login</a></li>
+            <li class="register"><a href="{% url 'Bilqram:register' %}">Register</a></li>
+        {% else %}
+            <li class="user"><a href="{% url 'Bilqram:user' user.username %}">{{ user.username }}</a></li>
+        {% endif %}
     </ul>
 </div>
 
