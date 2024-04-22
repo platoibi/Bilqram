@@ -4,11 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="23761e23-0ab5-4e7a-b1c0-d2b75d64ccc4" name="Changes" comment="Added navigation bar, and now you do not need to choose user when creating blog">
-      <change afterPath="$PROJECT_DIR$/Bilqram/templates/Bilqram/logout.html" afterDir="false" />
+    <list default="true" id="23761e23-0ab5-4e7a-b1c0-d2b75d64ccc4" name="Changes" comment="Bug fixes">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Bilqram/templates/Bilqram/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/Bilqram/templates/Bilqram/base.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Bilqram/templates/Bilqram/blog.html" beforeDir="false" afterPath="$PROJECT_DIR$/Bilqram/templates/Bilqram/blog.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Bilqram/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/Bilqram/urls.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Bilqram/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/Bilqram/views.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
     </list>
@@ -131,7 +131,15 @@
       <option name="project" value="LOCAL" />
       <updated>1713785803378</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Bug fixes">
+      <option name="closed" value="true" />
+      <created>1713787134422</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1713787134422</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -139,6 +147,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Added navigation bar, and now you do not need to choose user when creating blog" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added navigation bar, and now you do not need to choose user when creating blog" />
+    <MESSAGE value="Bug fixes" />
+    <option name="LAST_COMMIT_MESSAGE" value="Bug fixes" />
   </component>
 </project>

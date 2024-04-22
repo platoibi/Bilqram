@@ -4,7 +4,7 @@ from django.utils import timezone
 from django.contrib.auth import authenticate, login, logout
 from django.contrib import messages
 from .forms import UserRegistrationForm
-from Bilqram.models import User, Blog
+from Bilqram.models import User, Blog, Comment
 from .forms import LoginForm
 
 
@@ -56,7 +56,8 @@ def blogs(request):
 def blog(request, blog_id):
     b = get_object_or_404(Blog, id=blog_id)
     context = {
-        'blog': b
+        'blog': b,
+        'comments': Comment.objects.filter(par_blog=b)
     }
     return render(request, 'Bilqram/blog.html', context)
 
@@ -102,3 +103,15 @@ def user_created(request):
 def user_logout(request):
     logout(request)
     return redirect('Bilqram:home')
+
+
+def newComment(request, blog_id):
+    if request.method == 'POST':
+        b = get_object_or_404(Blog, pk=blog_id)
+        c = Comment(par_blog=b, content=request.POST['comment'],
+                    author=get_object_or_404(User, id=request.user.id), editable=True,
+                    pub_date=timezone.now())
+        c.save()
+        return redirect('Bilqram:blog', blog_id=blog_id)
+    else:
+        return redirect('Bilqram:home')

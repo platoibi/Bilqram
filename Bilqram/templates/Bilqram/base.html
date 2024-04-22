@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     {% block title %} <title>Base Page</title> {% endblock title %}
     <style>
-        div.topnav ul {
+        .topnav ul {
           list-style-type: none;
           margin: 0;
           padding: 0;
@@ -12,15 +12,15 @@
           background-color: #333;
         }
 
-        div.topnav li {
+        .topnav li {
           float: left;
         }
 
-        div.topnav li.login, div.topnav li.register, div.topnav li.user{
+        .topnav .rightNav{
             float: right;
         }
 
-        div.topnav li a {
+        .topnav li a {
           display: block;
           color: white;
           text-align: center;
@@ -28,7 +28,7 @@
           text-decoration: none;
         }
 
-        div.topnav li a:hover {
+        .topnav li a:hover {
           background-color: #111;
         }
     </style>
@@ -41,10 +41,11 @@
         <li><a href="{% url 'Bilqram:blogs' %}">Blogs</a></li>
         <li><a href="{% url 'Bilqram:users' %}">Users</a></li>
         {% if not user.is_authenticated %}
-            <li class="login"><a href="{% url 'Bilqram:login' %}">Login</a></li>
-            <li class="register"><a href="{% url 'Bilqram:register' %}">Register</a></li>
+            <li class="rightNav"><a href="{% url 'Bilqram:login' %}">Login</a></li>
+            <li class="rightNav"><a href="{% url 'Bilqram:register' %}">Register</a></li>
         {% else %}
-            <li class="user"><a href="{% url 'Bilqram:user' user.username %}">{{ user.username }}</a></li>
+            <li class="rightNav"><a href="{% url 'Bilqram:user' user.username %}">{{ user.username }}</a></li>
+            <li class="rightNav"><a href="{% url 'Bilqram:logout' %}">Logout</a></li>
         {% endif %}
     </ul>
 </div>

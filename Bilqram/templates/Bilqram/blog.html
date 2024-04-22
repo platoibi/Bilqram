@@ -1,6 +1,10 @@
 {% extends 'Bilqram/base.html' %}
-
 {% block title %}
+    <style>
+    .blogAuthorName{
+        float: right;
+    }
+    </style>
     <title>{{ blog.title }}</title>
 {% endblock title %}
 
@@ -14,10 +18,34 @@
 
     <br><br>
 
-    <h3><a href="{% url 'Bilqram:user' blog.author.name %}">{{ blog.author.username }}</a> </h3>
+    <h3 class="blogAuthorName"><a href="{% url 'Bilqram:user' blog.author.username %}">Author: {{ blog.author.name }}</a> </h3>
 
     <br><br>
 
-    <a href="{% url 'Bilqram:blogs' %}"><button>All Blogs</button></a>
+    <div class="commentSection">
+        {% if user.is_authenticated %}
+            <div class="writeComment">
+                <form action="{% url 'Bilqram:newComment' blog.id %}" method="post">
+                    {% csrf_token %}
+                    <label> Your Comment
+                        <textarea name="comment">
+                        </textarea>
+                    </label>
+                    <input type="submit" value="Publish comment">
+                </form>
+            </div>
+        {% else %}
+            <h2>Log in to write a comment</h2>
+        {% endif %}
+
+        {% for comment in comments %}
+            <div class="comment">
+                <h4>{{ comment.author }}:</h4>
+                <h3>{{ comment.title }}</h3>
+                <p>{{ comment.content }}</p>
+            </div>
+            <br><br>
+        {% endfor %}
+    </div>
 
 {% endblock content %}
