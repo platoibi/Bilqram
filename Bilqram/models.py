@@ -39,3 +39,9 @@ class Blog(Content):
 
 class Comment(Content):
     par_blog = models.ForeignKey(Blog, on_delete=models.CASCADE)
+
+
+class Like(models.Model):
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
+    blog = models.ForeignKey(Blog, on_delete=models.CASCADE)
+    date = models.DateTimeField()

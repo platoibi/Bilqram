@@ -6,30 +6,47 @@
     }
     </style>
     <title>{{ blog.title }}</title>
+    <script>
+
+    $("button").click(function(){
+      $.post({% url "Bilqram:like" blog.id %});
+    });
+
+    </script>
 {% endblock title %}
 
 {% block content %}
 
-    <h1>{{ blog.title }}</h1>
+    <div class="blog ms-3 me-3 mt-3 mb-3">
 
-    <p>
-        {{ blog.content }}
-    </p>
+        <h1 class="text-center mt-2">{{ blog.title }}</h1>
+
+        <p class="ms-3">
+            {{ blog.content }}
+        </p>
+
+        {% if liked %}
+            <a href="{% url 'Bilqram:like' blog.id %}"><button>Unlike</button></a>
+
+        {% else %}
+            <a href="{% url 'Bilqram:like' blog.id %}"><button>Like</button></a>
+
+        {% endif %}
+        <p>Like count: {{ likes }}</p>
+        <br><br>
+
+        <h5 class="blogAuthorName"><a href="{% url 'Bilqram:user' blog.author.username %}">Author: {{ blog.author.name }}</a> </h5>
+    </div>
 
     <br><br>
 
-    <h3 class="blogAuthorName"><a href="{% url 'Bilqram:user' blog.author.username %}">Author: {{ blog.author.name }}</a> </h3>
-
-    <br><br>
-
-    <div class="commentSection">
+    <div class="commentSection ms-3">
         {% if user.is_authenticated %}
             <div class="writeComment">
                 <form action="{% url 'Bilqram:newComment' blog.id %}" method="post">
                     {% csrf_token %}
-                    <label> Your Comment
-                        <textarea name="comment">
-                        </textarea>
+                    <label> Your Comment<br>
+                        <textarea  name="comment" cols="100" rows="4" style="background-color: #e9e5ec"></textarea>
                     </label>
                     <input type="submit" value="Publish comment">
                 </form>
@@ -39,10 +56,11 @@
         {% endif %}
 
         {% for comment in comments %}
-            <div class="comment">
-                <h4>{{ comment.author }}:</h4>
-                <h3>{{ comment.title }}</h3>
-                <p>{{ comment.content }}</p>
+            <div class="card comment text-bg-light" style="width: 18rem;">
+              <div class="card-body">
+                  <a href="{% url "Bilqram:user" comment.author.username %}" class="link-info"> <h5 class="card-title">{{ comment.author }}</h5> </a>
+                <p class="card-text">{{ comment.content }}</p>
+              </div>
             </div>
             <br><br>
         {% endfor %}

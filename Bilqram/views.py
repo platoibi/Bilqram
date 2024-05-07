@@ -4,8 +4,9 @@ from django.utils import timezone
 from django.contrib.auth import authenticate, login, logout
 from django.contrib import messages
 from .forms import UserRegistrationForm
-from Bilqram.models import User, Blog, Comment
+from Bilqram.models import User, Blog, Comment, Like
 from .forms import LoginForm
+from django.contrib.auth.models import User as U
 
 
 # Create your views here.
@@ -22,9 +23,9 @@ def users(request):
 
 
 def user(request, username: str):
-    u = get_object_or_404(User, username=username.lower())
+    u = get_object_or_404(User, username=username)
     context = {
-        'user': u
+        'User': u
     }
     return render(request, 'Bilqram/user.html', context)
 
@@ -57,8 +58,11 @@ def blog(request, blog_id):
     b = get_object_or_404(Blog, id=blog_id)
     context = {
         'blog': b,
-        'comments': Comment.objects.filter(par_blog=b)
+        'comments': Comment.objects.filter(par_blog=b),
+        'likes': len(Like.objects.filter(blog=b)),
+        'liked': len(Like.objects.filter(user=get_object_or_404(User, username=request.user.username), blog=b)) == 1 if request.user.is_authenticated else False
     }
+    print(context['liked'])
     return render(request, 'Bilqram/blog.html', context)
 
 
@@ -66,10 +70,15 @@ def register(request):
     if request.method == 'POST':
         form = UserRegistrationForm(request.POST)
         if form.is_valid():
-            form.save()
+            user = form.save(commit=False)
             username = form.cleaned_data.get('username')
             password = form.cleaned_data.get('password')
+            user.password = password
+            user.save()
+            mainUser = U.objects.create_user(username=username, password=password)
+            mainUser.save()
             messages.success(request, f'Account created for {username} {password}!')
+
             return redirect('Bilqram:user_created')
     else:
         form = UserRegistrationForm()
@@ -84,7 +93,10 @@ def user_login(request):
             print(username)
             password = form.cleaned_data['password']
             print(password)
+            # u = get_object_or_404(User, username=username)
+            # print(u.password)
             user = authenticate(request, username=username, password=password)
+            print(user)
             if user is not None:
                 login(request, user)
                 # Redirect to a success page or homepage
@@ -109,9 +121,22 @@ def newComment(request, blog_id):
     if request.method == 'POST':
         b = get_object_or_404(Blog, pk=blog_id)
         c = Comment(par_blog=b, content=request.POST['comment'],
-                    author=get_object_or_404(User, id=request.user.id), editable=True,
+                    author=get_object_or_404(User, username=request.user.username), editable=True,
                     pub_date=timezone.now())
         c.save()
         return redirect('Bilqram:blog', blog_id=blog_id)
     else:
         return redirect('Bilqram:home')
+
+
+def like(request, blog_id):
+    if not request.user.is_authenticated:
+        return redirect('Bilqram:login')
+    b = get_object_or_404(Blog, pk=blog_id)
+    curLike = Like.objects.filter(user=get_object_or_404(User, username=request.user.username), blog=b)
+    if len(curLike) == 0:
+        l = Like(blog=b, user=get_object_or_404(User, username=request.user.username), date=timezone.now())
+        l.save()
+    else:
+        curLike.delete()
+    return redirect('Bilqram:blog', blog_id=blog_id)

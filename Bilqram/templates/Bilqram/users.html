@@ -8,7 +8,7 @@
 
     {% if user_list  %}
         {% for user in user_list %}
-            <li><a href="{% url 'Bilqram:user' user.username %}">{{ user }}</a></li>
+            <li><a href="{% url 'Bilqram:user' user.username %}">{{ user.username }}</a></li>
         {% endfor %}
     {% endif %}
     

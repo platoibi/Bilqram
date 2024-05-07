@@ -4,12 +4,24 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="23761e23-0ab5-4e7a-b1c0-d2b75d64ccc4" name="Changes" comment="Bug fixes">
+    <list default="true" id="23761e23-0ab5-4e7a-b1c0-d2b75d64ccc4" name="Changes" comment="Final touches (22 april)">
+      <change beforePath="$PROJECT_DIR$/.idea/Project.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/Project.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Bilqram/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/Bilqram/admin.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Bilqram/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/Bilqram/forms.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Bilqram/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/Bilqram/models.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Bilqram/templates/Bilqram/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/Bilqram/templates/Bilqram/base.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Bilqram/templates/Bilqram/blog.html" beforeDir="false" afterPath="$PROJECT_DIR$/Bilqram/templates/Bilqram/blog.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Bilqram/templates/Bilqram/blogs.html" beforeDir="false" afterPath="$PROJECT_DIR$/Bilqram/templates/Bilqram/blogs.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Bilqram/templates/Bilqram/createBlog.html" beforeDir="false" afterPath="$PROJECT_DIR$/Bilqram/templates/Bilqram/createBlog.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Bilqram/templates/Bilqram/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/Bilqram/templates/Bilqram/login.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Bilqram/templates/Bilqram/register.html" beforeDir="false" afterPath="$PROJECT_DIR$/Bilqram/templates/Bilqram/register.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Bilqram/templates/Bilqram/user.html" beforeDir="false" afterPath="$PROJECT_DIR$/Bilqram/templates/Bilqram/user.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Bilqram/templates/Bilqram/users.html" beforeDir="false" afterPath="$PROJECT_DIR$/Bilqram/templates/Bilqram/users.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Bilqram/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/Bilqram/urls.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Bilqram/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/Bilqram/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Project/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/Project/settings.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Project/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/Project/urls.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -31,12 +43,12 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
-  "lastFilter": {
-    "state": "OPEN",
-    "assignee": "platoibi"
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;platoibi&quot;
   }
-}]]></component>
+}</component>
   <component name="GithubPullRequestsUISettings">
     <option name="selectedUrlAndAccountId">
       <UrlAndAccount>
@@ -75,6 +87,7 @@
 }</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/Images" />
       <recent name="$PROJECT_DIR$/Bilqram/templates" />
       <recent name="$PROJECT_DIR$/Bilqram" />
     </key>
@@ -122,6 +135,17 @@
       <option name="presentableId" value="Default" />
       <updated>1713532512742</updated>
       <workItem from="1713532518430" duration="14817000" />
+      <workItem from="1713804013954" duration="683000" />
+      <workItem from="1713868197990" duration="457000" />
+      <workItem from="1713874976146" duration="1433000" />
+      <workItem from="1713948669177" duration="602000" />
+      <workItem from="1714047046281" duration="4005000" />
+      <workItem from="1714512377054" duration="410000" />
+      <workItem from="1714515611243" duration="5852000" />
+      <workItem from="1714918614832" duration="825000" />
+      <workItem from="1714931240267" duration="4699000" />
+      <workItem from="1714937248106" duration="8491000" />
+      <workItem from="1715067000407" duration="2590000" />
     </task>
     <task id="LOCAL-00001" summary="Added navigation bar, and now you do not need to choose user when creating blog">
       <option name="closed" value="true" />
@@ -139,15 +163,35 @@
       <option name="project" value="LOCAL" />
       <updated>1713787134422</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Final touches (22 april)">
+      <option name="closed" value="true" />
+      <created>1713791962140</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1713791962140</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Added navigation bar, and now you do not need to choose user when creating blog" />
     <MESSAGE value="Bug fixes" />
-    <option name="LAST_COMMIT_MESSAGE" value="Bug fixes" />
+    <MESSAGE value="Final touches (22 april)" />
+    <option name="LAST_COMMIT_MESSAGE" value="Final touches (22 april)" />
   </component>
 </project>

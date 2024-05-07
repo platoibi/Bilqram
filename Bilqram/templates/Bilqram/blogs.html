@@ -1,11 +1,30 @@
 {% extends 'Bilqram/base.html' %}
-{% block title %} <title>Blogs</title> {% endblock title %}
+{% block title %}
+<title>Blogs</title>
+{% endblock title %}
 {% block content %}
-{% if blogs  %}
-    {% for blog in blogs %}
-        <li><a href="{% url 'Bilqram:blog' blog.id %}">{{ blog.title }}</a></li>
-    {% endfor %}
-{% endif %}
-<br><br>
-<a href="{% url 'Bilqram:newBlog' %}"><button>New Blog</button></a>
+<div class="container mt-3">
+  <div class="row row-cols-1 row-cols-md-3 g-4">
+    {% if blogs %}
+        {% for blog in blogs %}
+            <div class="col">
+                <div class="card h-100 text-bg-light">
+{#                    <img src="{{ blog.image_url }}" class="card-img-top" alt="Blog Image">#}
+                    <div class="card-body">
+                        <h5 class="card-title"><a href="{% url 'Bilqram:blog' blog.id %}" class="link-primary link-underline link-underline-opacity-0 link-underline-opacity-25-hover">{{ blog.title }}</a></h5>
+                        <p class="card-text text-truncate">{{ blog.content }}</p>
+                    </div>
+                    <div class="card-footer">
+                        <small class="text-muted">By <a href="{% url "Bilqram:user" blog.author.username %}">{{ blog.author.name }}</a></small>
+                    </div>
+                </div>
+            </div>
+        {% endfor %}
+    {% else %}
+        <p>No blogs found.</p>
+    {% endif %}
+  </div>
+</div>
+<br>
+<a href="{% url 'Bilqram:newBlog' %}" style="float: right" class="me-5"><button type="button" class="btn btn-primary">New Blog</button></a>
 {% endblock %}

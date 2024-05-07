@@ -5,6 +5,7 @@
 
 {% block content %}
 <body>
+<div class="ms-3 mt-3">
     <h2>Login</h2>
     {% if messages %}
         {% for message in messages %}
@@ -16,6 +17,7 @@
         {{ form.as_p }}
         <button type="submit">Login</button>
     </form>
-<br><br>
-<a href="{% url 'Bilqram:register' %}">Register</a>
+    <br><br>
+    <a href="{% url 'Bilqram:register' %}">Register</a>
+</div>
 {% endblock content %}
